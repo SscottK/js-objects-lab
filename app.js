@@ -1,26 +1,23 @@
-const pokemon = require('./data.js')
-
-
+const pokemon = require("./data.js");
 
 const game = {
-    party: [],
-    gyms: [
-      { location: "Pewter City", completed: false, difficulty: 1 },
-      { location: "Cerulean City", completed: false, difficulty: 2 },
-      { location: "Vermilion City", completed: false, difficulty: 3 },
-      { location: "Celadon City", completed: false, difficulty: 4 },
-      { location: "Fuchsia City", completed: false, difficulty: 5 },
-      { location: "Saffron City", completed: false, difficulty: 6 },
-      { location: "Cinnabar Island", completed: false, difficulty: 7 },
-      { location: "Viridian City", completed: false, difficulty: 8 },
-    ],
-    items: [
-      { name: "potion", quantity: 4 },
-      { name: "pokeball", quantity: 8 },
-      { name: "rare candy", quantity: 99 },
-    ],
-  }
-
+  party: [],
+  gyms: [
+    { location: "Pewter City", completed: false, difficulty: 1 },
+    { location: "Cerulean City", completed: false, difficulty: 2 },
+    { location: "Vermilion City", completed: false, difficulty: 3 },
+    { location: "Celadon City", completed: false, difficulty: 4 },
+    { location: "Fuchsia City", completed: false, difficulty: 5 },
+    { location: "Saffron City", completed: false, difficulty: 6 },
+    { location: "Cinnabar Island", completed: false, difficulty: 7 },
+    { location: "Viridian City", completed: false, difficulty: 8 },
+  ],
+  items: [
+    { name: "potion", quantity: 4 },
+    { name: "pokeball", quantity: 8 },
+    { name: "rare candy", quantity: 99 },
+  ],
+};
 
 /*
 Exercise 1
@@ -28,12 +25,12 @@ Exercise 1
 //console.dir(pokemon, { maxArrayLength: null })
 let myPokemon = 0;
 pokemon.forEach((mon) => {
-    if (mon.number === 59) {
-        myPokemon = pokemon.indexOf(mon);
-    };
+  if (mon.number === 59) {
+    myPokemon = pokemon.indexOf(mon);
+  }
 });
 let myPokemonName = pokemon[myPokemon].name;
-console.log('Exercise 1 Result:', myPokemonName);
+console.log("Exercise 1 Result:", myPokemonName);
 
 /*
 Exercise 2
@@ -48,9 +45,9 @@ Exercise 3
 
 Solve Exercise 3 here:
 */
-game.difficulty = 'Easy';
+game.difficulty = "Easy";
 
-console.log('Exercise 3 Result:', game.difficulty);
+console.log("Exercise 3 Result:", game.difficulty);
 
 /*
 Exercise 4
@@ -62,13 +59,12 @@ Solve Exercise 4 here:
 */
 
 pokemon.forEach((mon) => {
-    if (mon.starter && mon.type === 'fire') {        
-        game.party.push(mon);
-    }
+  if (mon.starter && mon.type === "fire") {
+    game.party.push(mon);
+  }
 });
 
-
-console.log('Exercise 4 Result:', game.party);
+console.log("Exercise 4 Result:", game.party);
 
 /*
 Exercise 5
@@ -80,18 +76,18 @@ Solve Exercise 5 here:
 */
 
 pokemon.forEach((mon) => {
-    if (mon.name === 'Gyarados') {
-        game.party.push(mon);
-    };
-    if (mon.name === 'Scyther') {
-        game.party.push(mon);
-    };
-    if (mon.name === 'Nidoking') {
-        game.party.push(mon);
-    };
+  if (mon.name === "Gyarados") {
+    game.party.push(mon);
+  }
+  if (mon.name === "Scyther") {
+    game.party.push(mon);
+  }
+  if (mon.name === "Nidoking") {
+    game.party.push(mon);
+  }
 });
 
-console.log('Exercise 5 Result:', game.party);
+console.log("Exercise 5 Result:", game.party);
 
 /*
 Exercise 6
@@ -106,7 +102,7 @@ Solve Exercise 6 here:
 
 game.party.sort((mon1, mon2) => mon2.hp - mon1.hp);
 
-console.log('Exercise 6 Result:', game.party);
+console.log("Exercise 6 Result:", game.party);
 
 /*
 Exercise 7
@@ -117,13 +113,12 @@ Exercise 7
 Solve Exercise 7 here:
 */
 game.gyms.forEach((gym) => {
-    if (gym.difficulty < 3) {
-        gym.completed = true;
-    };
+  if (gym.difficulty < 3) {
+    gym.completed = true;
+  }
 });
 
-console.log('Exercise 7 Result:', game.gyms);
-
+console.log("Exercise 7 Result:", game.gyms);
 
 /*
 Exercise 8
@@ -142,18 +137,18 @@ Solve Exercise 8 here:
 */
 let starterEvolved = {};
 pokemon.forEach((mon) => {
-    if (mon.name === 'Charmeleon') {
-        starterEvolved = mon;
-    };
+  if (mon.name === "Charmeleon") {
+    starterEvolved = mon;
+  }
 });
 
 for (let mon = 0; mon < game.party.length; mon++) {
-    if (game.party[mon].name === 'Charmander') {
-        game.party.splice(mon, 1, starterEvolved);
-    };
-};
+  if (game.party[mon].name === "Charmander") {
+    game.party.splice(mon, 1, starterEvolved);
+  }
+}
 
-console.log('Exercise 8 Result:', game.party);
+console.log("Exercise 8 Result:", game.party);
 
 /*
 Exercise 9
@@ -162,12 +157,12 @@ Exercise 9
 
 Solve Exercise 9 here:
 */
-const pokemonNames = []
+const pokemonNames = [];
 game.party.forEach((mon) => {
-    pokemonNames.push(mon.name);
+  pokemonNames.push(mon.name);
 });
 
-console.log('Exercise 9 Result:', pokemonNames);
+console.log("Exercise 9 Result:", pokemonNames);
 
 /*
 Exercise 10
@@ -177,15 +172,14 @@ Exercise 10
 
 Solve Exercise 10 here:
 */
-const starters = []
+const starters = [];
 pokemon.forEach((mon) => {
-    if (mon.starter) {
-        starters.push(mon);
-    };
-   
+  if (mon.starter) {
+    starters.push(mon);
+  }
 });
 
-console.log('Exercise 10 Result:', starters);
+console.log("Exercise 10 Result:", starters);
 
 /*
 Exercise 11
@@ -199,15 +193,15 @@ After writing this method, call it and pass in a Pokemon object of your choice f
 Solve Exercise 11 here:
 */
 game.catchPokemon = (pokemonObj) => {
-    game.party.push(pokemonObj);
-}
+  game.party.push(pokemonObj);
+};
 pokemon.forEach((mon) => {
-    if (mon.name === 'Onix') {
-        game.catchPokemon(mon);
-    };
+  if (mon.name === "Onix") {
+    game.catchPokemon(mon);
+  }
 });
 
-console.log('Exercise 11 Result:', game.party);
+console.log("Exercise 11 Result:", game.party);
 
 /*
 Exercise 12
@@ -223,19 +217,19 @@ Solve Exercise 12 here:
 */
 
 game.catchPokemon = (pokemonObj) => {
-    game.party.push(pokemonObj);
-    game.items.forEach((item) => {
-        if(item.name === 'pokeball') {
-            item.quantity -= 1;
-        };
-    });
+  game.party.push(pokemonObj);
+  game.items.forEach((item) => {
+    if (item.name === "pokeball") {
+      item.quantity -= 1;
+    }
+  });
 };
 pokemon.forEach((mon) => {
-    if (mon.name === 'Mew') {
-        game.catchPokemon(mon);
-    };
+  if (mon.name === "Mew") {
+    game.catchPokemon(mon);
+  }
 });
-console.log('Exercise 12 Result:', game.party, game.items);
+console.log("Exercise 12 Result:", game.party, game.items);
 
 /*
 Exercise 13
@@ -245,13 +239,12 @@ Exercise 13
 Solve Exercise 13 here:
 */
 game.gyms.forEach((gym) => {
-    if (gym.difficulty < 6) {
-        gym.completed = true;
-    };
+  if (gym.difficulty < 6) {
+    gym.completed = true;
+  }
 });
 
-
-console.log('Exercise 13 Result:', game.gyms);
+console.log("Exercise 13 Result:", game.gyms);
 
 /*
 Exercise 14
@@ -276,23 +269,20 @@ For example, if five gym objects have a value of `true` on their `completed` pro
 Solve Exercise 14 here:
 */
 
-
-
 game.gymStatus = () => {
-    const gymTally= {completed: 0, incomplete: 0 };
-    game.gyms.forEach((gym) => {
-        if (gym.completed === true) {
-            gymTally.completed += 1;
-        } else {
-            gymTally.incomplete += 1;
-        };
-    });
-    console.log(gymTally);
-
+  const gymTally = { completed: 0, incomplete: 0 };
+  game.gyms.forEach((gym) => {
+    if (gym.completed === true) {
+      gymTally.completed += 1;
+    } else {
+      gymTally.incomplete += 1;
+    }
+  });
+  console.log(gymTally);
 };
 
 game.gymStatus();
-console.log('Exercise 14 Result:', 'Logged above');
+console.log("Exercise 14 Result:", "Logged above");
 
 /*
 Exercise 15
@@ -305,16 +295,15 @@ This method should:
 
 Solve Exercise 15 here:
 */
-let mons = 0
+let mons = 0;
 game.partyCount = () => {
-    
-    game.party.forEach((mon) => {
-       return mons += 1;
-    })
-}
+  game.party.forEach((mon) => {
+    return (mons += 1);
+  });
+};
 
-game.partyCount()
-console.log('Exercise 15 Result:', mons);
+game.partyCount();
+console.log("Exercise 15 Result:", mons);
 
 /*
 Exercise 16
@@ -324,12 +313,12 @@ Exercise 16
 Solve Exercise 16 here:
 */
 game.gyms.forEach((gym) => {
-    if (gym.difficulty < 8) {
-        gym.completed = true;
-    };
+  if (gym.difficulty < 8) {
+    gym.completed = true;
+  }
 });
 
-console.log('Exercise 16 Result:', game.gyms);
+console.log("Exercise 16 Result:", game.gyms);
 
 /*
 Exercise 18
@@ -349,27 +338,26 @@ Also, log the `game.items` array to confirm that the pokeball quantity is being 
 
 Solve Exercise 18 here:
 */
-game.collection = []
+game.collection = [];
 game.catchPokemon = (pokemonObj) => {
-    if (game.party.length < 6) {
+  if (game.party.length < 6) {
     game.party.push(pokemonObj);
-    } else {
-        game.collection.push(pokemonObj)
+  } else {
+    game.collection.push(pokemonObj);
+  }
+  game.items.forEach((item) => {
+    if (item.name === "pokeball") {
+      item.quantity -= 1;
     }
-    game.items.forEach((item) => {
-        if(item.name === 'pokeball') {
-            item.quantity -= 1;
-        };
-    });
+  });
 };
 pokemon.forEach((mon) => {
-    if (mon.name === 'Mewtwo') {
-        game.catchPokemon(mon);
-    };
+  if (mon.name === "Mewtwo") {
+    game.catchPokemon(mon);
+  }
 });
 
-
-console.log('Exercise 18 Result:', game.party, game.collection);
+console.log("Exercise 18 Result:", game.party, game.collection);
 
 /*
 Exercise 19
@@ -383,35 +371,32 @@ Solve Exercise 19 here:
 */
 
 game.catchPokemon = (pokemonObj) => {
-    if (game.party.length < 6) {    
-        game.items.forEach((item) => {
-            if(item.name === 'pokeball' && item.quantity > 0) {
-                item.quantity -= 1;
-                game.party.push(pokemonObj);
-            } else {
-                console.log('No more pokeballs!')
-            };
-        })
-    
-    } else {
-        game.items.forEach((item) => {
-            if(item.name === 'pokeball' && item.quantity > 0) {
-                item.quantity -= 1;
-                game.collection.push(pokemonObj)
-            };
-        })
-    }
-}
-
-
+  if (game.party.length < 6) {
+    game.items.forEach((item) => {
+      if (item.name === "pokeball" && item.quantity > 0) {
+        item.quantity -= 1;
+        game.party.push(pokemonObj);
+      } else {
+        console.log("No more pokeballs!");
+      }
+    });
+  } else {
+    game.items.forEach((item) => {
+      if (item.name === "pokeball" && item.quantity > 0) {
+        item.quantity -= 1;
+        game.collection.push(pokemonObj);
+      }
+    });
+  }
+};
 
 pokemon.forEach((mon) => {
-    if (mon.name === 'Dragonite') {
-        game.catchPokemon(mon);
-    };
+  if (mon.name === "Dragonite") {
+    game.catchPokemon(mon);
+  }
 });
 
-console.log('Exercise 19 Result:', game.items, game.collection);
+console.log("Exercise 19 Result:", game.items, game.collection);
 
 /*
 Exercise 20
@@ -428,36 +413,37 @@ Solve Exercise 20 here:
 */
 
 game.catchPokemon = (name) => {
-    pokemon.forEach((mon) => {        
-        if (mon.name.toLowerCase() === name.toLowerCase()) {
-            if (game.party.length < 6) {    
-                game.items.forEach((item) => {
-                    if(item.name === 'pokeball' && item.quantity > 0) {
-                        item.quantity -= 1;
-                        game.party.push(mon);
-                    } else {
-                        console.log('No more pokeballs!')
-                    };
-                })
-            
-            } else {
-                game.items.forEach((item) => {
-                    if(item.name === 'pokeball' && item.quantity > 0) {
-                        item.quantity -= 1;
-                        game.collection.push(mon)
-                    };
-                })
-            }
-        } else {
-        console.log(`Sorry ${name} does not exist`)
-        }
-    })
-}
+  let inArray = false;
+  pokemon.forEach((mon) => {
+    if (mon.name.toLowerCase() === name.toLowerCase()) {
+      inArray = true;
+      if (game.party.length < 6) {
+        game.items.forEach((item) => {
+          if (item.name === "pokeball" && item.quantity > 0) {
+            item.quantity -= 1;
+            game.party.push(mon);
+          } else {
+            console.log("No more pokeballs!");
+          }
+        });
+      } else {
+        game.items.forEach((item) => {
+          if (item.name === "pokeball" && item.quantity > 0) {
+            item.quantity -= 1;
+            game.collection.push(mon);
+          }
+        });
+      }
+    }
+  });
+  if (inArray === false) {
+    console.log(`Sorry ${name} does not exist`);
+  }
+};
 
-
-game.catchPokemon('VoltorB')
-game.catchPokemon('TurTLE')
-console.log('Exercise 20 Result:', game.items, game.collection);
+game.catchPokemon("VoltorB");
+game.catchPokemon("TurTLE");
+console.log("Exercise 20 Result:", game.items, game.collection);
 
 /*
 Exercise 21
@@ -484,24 +470,14 @@ Log the object when it's constructed.
 
 Solve Exercise 21 here:
 */
-const types = {};
 
+let types = {};
 
-pokemon.forEach((mon) => {     
-    
-    types[mon.type] = []
-
+pokemon.forEach((mon) => {
+  if (!Object.keys(types).includes(mon.type)) {
+    types[mon.type] = [];
+  }
+  types[mon.type].push(mon);
 });
-Object.keys(types).forEach((type) => {
-    
-    pokemon.forEach((mon) => {
-    if (mon.type === type) {
-        types[mon.type] + mon
-    }
-})
 
-})
-
-
-console.log('Exercise 21 Result:', types);
-
+console.log("Exercise 21 Result:", types);
